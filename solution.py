@@ -1,4 +1,4 @@
-testers = ["code", "Braille", "The quick brown fox jumps over the lazy dog", "5654sdfdf   ASWW"]
+testers = ["code", "Braille", "The quick brown fox jumps over the lazy dog",]
 import re
 
 def getBraille(code):
@@ -11,7 +11,7 @@ def getBraille(code):
       if letter == code:
         return index
 
-  if re.findall(r"[a-z\s]", code):
+  if re.findall("[a-z\s]", code):
     i = findIndex(code)
     string += brillesLib[i]
   elif re.findall("[A-Z]", code):
@@ -31,7 +31,8 @@ def getTargetDate(asciiCode):
   return output
 
 def solution(asciiCode):
-    print(getTargetDate(asciiCode))
+  return getTargetDate(asciiCode)
+  #print(getTargetDate(asciiCode))
 
-for i, test in enumerate(testers):
-  solution(test)
+# for i, test in enumerate(testers):
+#   solution(test)
